@@ -1,4 +1,4 @@
-var addToFile = require('./crudFunctions')
+var addToFile = require('./readTodos')
 var checkedFILE= require('./checkedTodos')
 var editFile= require('./editTodo.js')
 var deleteFile= require('./deleteTodo.js')
@@ -41,13 +41,13 @@ function main(cmdArgs){
             delete parsed.command
             delete parsed.title
             delete parsed.body
-            addToFile.checkToDo(parsed.id)
+            checkedFILE.checkToDo(parsed.id)
             break;
         case "uncheck":
                 delete parsed.command
                 delete parsed.title
                 delete parsed.body
-                addToFile.unCheckToDo(parsed.id)
+                checkedFILE.unCheckToDo(parsed.id)
                 break;
         case "edit":
             delete parsed.command
